@@ -1,6 +1,7 @@
 import { User } from '../models/user.js';
 import { Request } from '../models/request.js';
 import { AppDataService } from './app-data-service.js';
+import { AuthService } from './auth-service.js';
 
 
 export class App {
@@ -9,7 +10,6 @@ export class App {
     // self.i = '0';
   }
   run() {
-    const user = new User();
 
     // let request = defaultRequest();
 
@@ -72,5 +72,8 @@ export class App {
     AppDataService._requestText = requestText;
     AppDataService._yesButton = yesButton;
     AppDataService._noButton = noButton;
+
+
+    AuthService.user = new User();
   }
 }
