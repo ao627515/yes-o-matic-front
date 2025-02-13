@@ -1,12 +1,13 @@
-import { Media } from './media';
-import { RejectionsButtonText } from './rejections-button-text';
-import { User } from './user';
+import { Media } from './media.js';
+import { RejectionsButtonText } from './rejections-button-text.js';
+import { User } from './user.js';
 
 export class Request {
   constructor(
     _id = undefined,
     _acceptButtonText = 'Oui',
     _text = 'Demande ?',
+    _numberOfRefusals = 1,
     _forceAccept = false,
     _isAccepted = false,
     _isRejected = false,
@@ -18,6 +19,7 @@ export class Request {
     this._id = _id;
     this._acceptButtonText = _acceptButtonText;
     this._text = _text;
+    this._numberOfRefusals = _numberOfRefusals;
     this._forceAccept = _forceAccept;
     this._isAccepted = _isAccepted;
     this._isRejected = _isRejected;
