@@ -7,4 +7,7 @@ export class Request {
   _isAccepted = false;
   _isRejected = false;
   _user = new User();
+  _medias = null;
+  _rejectionsButtonTexts = null;
+  _bgStyles = null;
 }
