@@ -1,0 +1,142 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style du container principal */
+.bg-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #ffffff 100%);
+}
+
+/* Container principal du contenu */
+.request-container {
+  width: 90%;
+  height: 90%;
+  max-width: 500px;
+  aspect-ratio: 9/16;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Container des médias */
+.media-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Container du texte */
+.request-text-container {
+  padding: 20px 0;
+  text-align: center;
+}
+
+#request-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Container des boutons */
+.request-button-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Style des boutons */
+button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#yes-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+#no-button {
+  background-color: #f44336;
+  color: white;
+}
+
+#yes-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+#no-button:hover {
+  background-color: #da190b;
+  transform: scale(1.05);
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+  .request-container {
+    width: 95%;
+  }
+
+  #request-text {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .request-container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .request-button-container {
+    gap: 10px;
+  }
+
+  button {
+    padding: 10px;
+  }
+}
+
+/* Animation pour le bouton Yes qui grandit */
+@keyframes growButton {
+  to {
+    flex: 3;
+  }
+}
+
+.growing {
+  animation: growButton 0.5s forwards;
+}
