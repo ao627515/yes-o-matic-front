@@ -1,11 +1,11 @@
 import { Media } from './media.js';
-import { RejectionsButtonText } from './rejections-button.js';
+import { RejectionsButton } from './rejections-button.js';
 import { User } from './user.js';
 
 export class Request {
   constructor(
     _id = undefined,
-    _acceptButtonTexts = null,
+    _acceptButtons = null,
     _text = null,
     _startMedia = null,
     _numberOfRefusals = 1,
@@ -14,12 +14,11 @@ export class Request {
     _isAccepted = false,
     _isRejected = false,
     _user = null,
-    _medias = null,
-    _rejectionsButtonTexts = null,
+    _rejectionsButtons = null,
     _bgStyles = null
   ) {
     this._id = _id;
-    this._acceptButtonText = _acceptButtonText;
+    this._acceptButtons = _acceptButtons;
     this._text = _text;
     this._startMedia = _startMedia;
     this._numberOfRefusals = _numberOfRefusals;
@@ -28,32 +27,29 @@ export class Request {
     this._isAccepted = _isAccepted;
     this._isRejected = _isRejected;
     this._user = _user;
-    this._medias = _medias;
-    this._rejectionsButtonTexts = _rejectionsButtonTexts;
+    this._rejectionsButtons = _rejectionsButtons;
     this._bgStyles = _bgStyles;
   }
 
   // Getters
   get id() { return this._id; }
-  get acceptButtonText() { return this._acceptButtonText; }
+  get acceptButtons() { return this._acceptButtons; }
   get text() { return this._text; }
   get forceAccept() { return this._forceAccept; }
   get isAccepted() { return this._isAccepted; }
   get isRejected() { return this._isRejected; }
   get user() { return this._user; }
-  get medias() { return this._medias; }
-  get rejectionsButtonTexts() { return this._rejectionsButtonTexts; }
+  get rejectionsButtons() { return this._rejectionsButtons; }
   get bgStyles() { return this._bgStyles; }
 
   // Setters
   set id(value) { this._id = value; }
-  set acceptButtonText(value) { this._acceptButtonText = value; }
+  set acceptButtons(value) { this._acceptButtons = value; }
   set text(value) { this._text = value; }
   set forceAccept(value) { this._forceAccept = value; }
   set isAccepted(value) { this._isAccepted = value; }
   set isRejected(value) { this._isRejected = value; }
   set user(value) { this._user = value; }
-  set medias(value) { this._medias = value; }
-  set rejectionsButtonTexts(value) { this._rejectionsButtonTexts = value; }
+  set rejectionsButtons(value) { this._rejectionsButtons = value; }
   set bgStyles(value) { this._bgStyles = value; }
 }
