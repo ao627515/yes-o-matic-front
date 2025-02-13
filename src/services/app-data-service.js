@@ -1,12 +1,12 @@
 export class AppDataService {
-  static _bgContainer = null;
-  static _requestContainer = null;
-  static _mediaContainer = null;
-  static _requestTextContainer = null;
-  static _requestButtonContainer = null;
-  static _requestText = null;
-  static _yesButton = null;
-  static _noButton = null;
+  _bgContainer = null;
+  _requestContainer = null;
+  _mediaContainer = null;
+  _requestTextContainer = null;
+  _requestButtonContainer = null;
+  _requestText = null;
+  _yesButton = null;
+  _noButton = null;
 
   constructor(
     // _bgContainer,
@@ -18,32 +18,32 @@ export class AppDataService {
     // _yesButton,
     // _noButton,
   ) {
-    // self._bgContainer = _bgContainer;
-    // self._requestContainer = _requestContainer;
-    // self._mediaContainer = _mediaContainer;
-    // self._requestTextContainer = _requestTextContainer;
-    // self._requestButtonContainer = _requestButtonContainer;
-    // self._requestText = _requestText;
-    // self._yesButton = _yesButton;
-    // self._noButton = _noButton;
+    this._bgContainer = document.querySelector('.bg-container');
+    this._requestContainer = document.querySelector('.request-container');
+    this._mediaContainer = document.querySelector('.media-container');
+    this._requestTextContainer = document.querySelector('.request-text-container');
+    this._requestButtonContainer = document.querySelector('.request-button-container');
+    this._requestText = document.getElementById('request-text');
+    this._yesButton = document.getElementById('yes-button');
+    this._noButton = document.getElementById('no-button');
   }
 
 
-  // get bgContainer() { return self._bgContainer; }
-  // get requestContainer() { return self._requestContainer; }
-  // get mediaContainer() { return self._mediaContainer; }
-  // get requestTextContainer() { return self._requestTextContainer; }
-  // get requestButtonContainer() { return self._requestButtonContainer; }
-  // get requestText() { return self._requestText; }
-  // get yesButton() { return self._yesButton; }
-  // get noButton() { return self._noButton }
+  get bgContainer() { return this._bgContainer; }
+  get requestContainer() { return this._requestContainer; }
+  get mediaContainer() { return this._mediaContainer; }
+  get requestTextContainer() { return this._requestTextContainer; }
+  get requestButtonContainer() { return this._requestButtonContainer; }
+  get requestText() { return this._requestText; }
+  get yesButton() { return this._yesButton; }
+  get noButton() { return this._noButton }
 
-  // set bgContainer(value) { AppDataService._bgContainer = value; }
-  // set requestContainer(value) { self._requestContainer = value; }
-  // set mediaContainer(value) { self._mediaContainer = value; }
-  // set requestTextContainer(value) { self._requestTextContainer = value; }
-  // set requestButtonContainer(value) { self.requestButtonContainer = value; }
-  // set requestText(value) { self._requestText = value; }
-  // set yesButton(value) { self.yesButton = value; }
-  // set noButton(value) { self._noButton = value; }
+  set bgContainer(value) { AppDataService._bgContainer = value; }
+  set requestContainer(value) { this._requestContainer = value; }
+  set mediaContainer(value) { this._mediaContainer = value; }
+  set requestTextContainer(value) { this._requestTextContainer = value; }
+  set requestButtonContainer(value) { this.requestButtonContainer = value; }
+  set requestText(value) { this._requestText = value; }
+  set yesButton(value) { this.yesButton = value; }
+  set noButton(value) { this._noButton = value; }
 }

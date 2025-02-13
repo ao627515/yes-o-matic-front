@@ -1,5 +1,6 @@
 import { App } from "./services/app.js";
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const bgContainer = document.querySelector('.bg-container');
   const requestContainer = document.querySelector('.request-container');

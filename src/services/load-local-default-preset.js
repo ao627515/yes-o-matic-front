@@ -1,5 +1,16 @@
-export class LoadLocalDefaultPreset {
-  static load() {
+import { RequestService } from "./request-service.js";
+import { YesButtonSerivce } from "./yes-button-service.js";
+import { DEFAULT_REQUEST } from './../constants/default-request.js'
 
+export class LoadLocalDefaultPreset {
+
+  constructor() {
+    RequestService.setGlobalRequest(DEFAULT_REQUEST);
+    RequestService.displayRequest();
+  }
+
+  load() {
+    const yesButtonSerivce = new YesButtonSerivce(RequestService.getGlobalRequest()?.acceptButtons);
+    yesButtonSerivce.handle();
   }
 }
