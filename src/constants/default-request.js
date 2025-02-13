@@ -31,19 +31,19 @@ export const DEFAULT_REQUEST = new Request(
     ),
     new RejectionsButton(
       undefined,
-      'Non',
+      "j'ai faim",
       'refusal_2.gif',
       null
     ),
     new RejectionsButton(
       undefined,
-      'Non',
+      "j'ai tres faim",
       'refusal_3.gif',
       null
     ),
     new RejectionsButton(
       undefined,
-      'Non',
+      "j'ai tres  tres faim",
       'refusal_4.gif',
       null
     ),

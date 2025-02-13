@@ -64,7 +64,7 @@ export class App {
 
     this._appDataService = new AppDataService();
 
-    console.log(this._appDataService);
+    // console.log(this._appDataService);
     AuthService.user = new User();
   }
 }
