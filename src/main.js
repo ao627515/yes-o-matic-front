@@ -1,7 +1,7 @@
 import { App } from "./services/app.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-  var bgContainer = document.querySelector('.bg-container');
+  const bgContainer = document.querySelector('.bg-container');
   const requestContainer = document.querySelector('.request-container');
   const mediaContainer = document.querySelector('.media-container');
   const requestTextContainer = document.querySelector('.request-text-container');
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // console.log(mediaContainer);
 
   const app = new App();
-  // console.log(app);
-
+  app.init();
   app.run();
 });
