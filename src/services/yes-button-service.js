@@ -6,23 +6,38 @@ import { RequestMedia } from "./request-media.js";
 
 
 export class YesButtonService extends Service {
-  currentIndext = 0;
-  acceptButtons = [];
+  #currentIndex = 0;
+  #acceptButtons = [];
   #yesButton = null
 
   constructor(acceptButtons) {
     super();
     this.#yesButton = document.getElementById('yes-button');
-    this.acceptButtons = [...acceptButtons];
+    this.#acceptButtons = [...acceptButtons];
     // this.refusalBehavior();
   }
 
   handle() {
     this.#yesButton.addEventListener('click', () => {
-      const appDataService = AppDataService.getInstance();
-      appDataService.requestButtonContainer.style.display = 'none';
-      appDataService.requestText.textContent = RequestService.getGlobalRequest().successMessage;
-      RequestMedia.getInstance().changeMedia(RequestService.getGlobalRequest().successMedia);
+      if (this.currentIndex === (this.acceptButtons.length - 1)) {
+        const appDataService = AppDataService.getInstance();
+        appDataService.requestButtonContainer.style.display = 'none';
+        appDataService.requestText.textContent = RequestService.getGlobalRequest().successMessage;
+        RequestMedia.getInstance().changeMedia(RequestService.getGlobalRequest().successMedia);
+      }
+
+      if (this.currentIndex < (this.acceptButtons.length - 1)) {
+        this.#currentIndex++;
+        console.log('Le bouton "Non" a été cliqué.');
+        const acceptButton = this.acceptButtons[this.#currentIndex];
+        this.#yesButton.textContent = acceptButton?.text;
+        const requestMedia = RequestMedia.getInstance();
+        requestMedia.changeMedia(acceptButton?.media);
+        const yesButton = YesButtonService.getInstance();
+        yesButton.refusalBehavior();
+      }
+
+
     });
   }
 
@@ -61,4 +76,7 @@ export class YesButtonService extends Service {
     appDataService.requestButtonContainer.style.flexDirection = 'column';
     appDataService.yesButton.style.padding = padding + '%';
   }
+
+  get currentIndex() { return this.#currentIndex }
+  get acceptButtons() { return this.#acceptButtons }
 } 
