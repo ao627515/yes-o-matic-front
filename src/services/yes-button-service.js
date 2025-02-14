@@ -43,6 +43,9 @@ export class YesButtonService extends Service {
     const padding = (refusualCurrenIndex * 45) / nbRefusuals;
     // console.log(padding);
     const appDataService = AppDataService.getInstance();
+    const requestButtonContainer = appDataService.requestButtonContainer;
+    // requestButtonContainer.style.padding = padding + '%';
+    appDataService.requestButtonContainer.style.flexDirection = 'column';
     appDataService.yesButton.style.padding = padding + '%';
   }
 } 
