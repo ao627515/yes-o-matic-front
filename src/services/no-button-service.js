@@ -16,8 +16,11 @@ export class NoButtonService extends Service {
 
   handle() {
     this.#noButton.addEventListener('click', () => {
-      this.#currentIndex = (this.#currentIndex + 1) % this.#rejectButtons.length;
-      this.#noButton.textContent = this.#rejectButtons[this.#currentIndex]?.text;
+      if (this.currentIndex < (this.rejectButtons.length - 1)) {
+        this.#currentIndex++;
+        console.log('Le bouton "Non" a été cliqué.');
+        this.#noButton.textContent = this.rejectButtons[this.#currentIndex]?.text;
+      }
     });
   }
 
