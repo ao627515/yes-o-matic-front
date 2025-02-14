@@ -11,16 +11,17 @@ export class App extends Service {
   _loadLocalDefaultPreset = null;
 
   constructor() {
+    super();
   }
+
   run() {
 
-    this._loadLocalDefaultPreset = new LoadLocalDefaultPreset();
+    this._loadLocalDefaultPreset = LoadLocalDefaultPreset.getInstance();
     this._loadLocalDefaultPreset.load();
   }
 
   init() {
-    this._appDataService = new AppDataService();
-
+    this._appDataService = AppDataService.getInstance();
     // console.log(this._appDataService);
     AuthService.user = new User();
   }

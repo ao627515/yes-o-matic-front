@@ -1,17 +1,17 @@
 export class Service {
-  static #instance = null;
+  static _instance = null;
 
   constructor() {
-    if (Service.#instance !== null) {
-      throw new Error("Service instance already created. Use Service.getInstance() to access it.");
+    if (new.target._instance !== null) {
+      throw new Error(`${new.target.name} instance already created. Use ${new.target.name}.getInstance() to access it.`);
     }
-    Service.#instance = this;
+    new.target._instance = this;
   }
 
   static getInstance() {
-    if (Service.#instance === null) {
-      Service.#instance = new Service();
+    if (this._instance === null) {
+      this._instance = new this(); // Utilise dynamiquement la classe héritée
     }
-    return Service.#instance;
+    return this._instance;
   }
 }

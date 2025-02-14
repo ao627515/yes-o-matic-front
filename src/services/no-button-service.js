@@ -7,6 +7,7 @@ export class NoButtonService extends Service {
   #noButton = null
 
   constructor(rejectButtons) {
+    super();
     this.#noButton = document.getElementById('no-button');
     this.#rejectButtons.push(...rejectButtons);
     console.log(this.rejectButtons.length);
@@ -15,15 +16,8 @@ export class NoButtonService extends Service {
 
   handle() {
     this.#noButton.addEventListener('click', () => {
-
-      if (this.currentIndex < (this.rejectButtons.length - 1)) {
-        // console.log('currentIndex - ', this.currentIndex);
-        this.#currentIndex++;
-        console.log('Le bouton "Non" a été cliqué.');
-        // console.log('currentIndex - ', this.currentIndex);
-        // console.log('rejectButtons - ', this.rejectButtons.length - 1);
-        this.#noButton.textContent = this.rejectButtons[this.#currentIndex]?.text;
-      }
+      this.#currentIndex = (this.#currentIndex + 1) % this.#rejectButtons.length;
+      this.#noButton.textContent = this.#rejectButtons[this.#currentIndex]?.text;
     });
   }
 

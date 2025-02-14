@@ -8,13 +8,14 @@ import { Service } from "./service.js";
 export class LoadLocalDefaultPreset extends Service {
 
   constructor() {
+    super();
     RequestService.setGlobalRequest(DEFAULT_REQUEST);
     RequestService.displayRequest();
   }
 
   load() {
-    const YesButtonService = new YesButtonService(RequestService.getGlobalRequest()?.acceptButtons);
-    YesButtonService.handle();
+    const yesButtonService = new YesButtonService(RequestService.getGlobalRequest()?.acceptButtons);
+    yesButtonService.handle();
 
     console.log(RequestService.getGlobalRequest()?.rejectionsButtons);
 

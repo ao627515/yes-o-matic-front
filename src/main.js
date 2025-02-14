@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // const noButton = document.getElementById('no-button');
   // console.log(mediaContainer);
 
-  const app = new App();
+  const app = App.getInstance();
+  console.log(app);
+
   app.init();
   app.run();
 });

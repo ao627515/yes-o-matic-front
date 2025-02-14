@@ -8,7 +8,9 @@ export class YesButtonService extends Service {
   #yesButton = null
 
   constructor(acceptButtons) {
+    super();
     this.#yesButton = document.getElementById('yes-button');
+    this.acceptButtons = [...acceptButtons];
   }
 
   handle() {

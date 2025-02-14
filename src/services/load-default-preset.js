@@ -3,6 +3,7 @@ import { Service } from "./service.js";
 
 export class LoadDefaultPreset extends Service {
   constructor() {
+    super();
     this._request = null;
   }
 

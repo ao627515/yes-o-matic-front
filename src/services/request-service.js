@@ -5,7 +5,12 @@ import { Service } from "./service.js";
 export class RequestService extends Service {
   static #globalRequest = null;
 
+  constructor() {
+    super();
+  }
+
   static getGlobalRequest() {
+
     return RequestService.#globalRequest;
   }
 
@@ -17,7 +22,7 @@ export class RequestService extends Service {
     if (!request)
       request = RequestService.#globalRequest;
 
-    const appDataService = new AppDataService();
+    const appDataService = AppDataService.getInstance();
     appDataService.requestText.textContent = request.text;
     appDataService.yesButton.textContent = request.acceptButtons[acceptBtnIndex].text;
     appDataService.noButton.textContent = request.rejectionsButtons[rejectionBtnIndex].text;
