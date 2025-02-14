@@ -1,6 +1,7 @@
 import { RequestMedia } from "./request-media.js";
 import { Service } from "./service.js";
 import { YesButtonService } from "./yes-button-service.js";
+import { RequestService } from "./request-service.js";
 
 
 export class NoButtonService extends Service {
@@ -18,6 +19,10 @@ export class NoButtonService extends Service {
 
   handle() {
     this.#noButton.addEventListener('click', () => {
+      if (RequestService.getGlobalRequest()?.forceAccept && this.currentIndex === (this.rejectButtons.length - 1)) {
+        this.#noButton.style.display = 'none';
+      }
+
       if (this.currentIndex < (this.rejectButtons.length - 1)) {
         this.#currentIndex++;
         console.log('Le bouton "Non" a été cliqué.');
