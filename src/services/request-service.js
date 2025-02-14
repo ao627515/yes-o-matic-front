@@ -1,6 +1,8 @@
 import { AppDataService } from "./app-data-service.js";
+import { Service } from "./service.js";
 
-export class RequestService {
+
+export class RequestService extends Service {
   static #globalRequest = null;
 
   static getGlobalRequest() {

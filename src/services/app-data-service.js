@@ -1,4 +1,6 @@
-export class AppDataService {
+import { Service } from "./service.js";
+
+export class AppDataService extends Service {
   _bgContainer = null;
   _requestContainer = null;
   _mediaContainer = null;
@@ -10,6 +12,8 @@ export class AppDataService {
 
   constructor(
   ) {
+    super();
+
     this._bgContainer = document.querySelector('.bg-container');
     this._requestContainer = document.querySelector('.request-container');
     this._mediaContainer = document.querySelector('.media-container');

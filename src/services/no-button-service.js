@@ -1,4 +1,7 @@
-export class NoButtonService {
+import { Service } from "./service.js";
+
+
+export class NoButtonService extends Service {
   #currentIndex = 0;
   #rejectButtons = [];
   #noButton = null

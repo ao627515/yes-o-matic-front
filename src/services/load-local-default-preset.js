@@ -2,9 +2,10 @@ import { RequestService } from "./request-service.js";
 import { YesButtonSerivce } from "./yes-button-service.js";
 import { DEFAULT_REQUEST } from './../constants/default-request.js'
 import { NoButtonService } from "./no-button-service.js";
+import { Service } from "./service.js";
 
 
-export class LoadLocalDefaultPreset {
+export class LoadLocalDefaultPreset extends Service {
 
   constructor() {
     RequestService.setGlobalRequest(DEFAULT_REQUEST);

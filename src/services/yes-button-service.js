@@ -1,6 +1,8 @@
 import { AppDataService } from "./app-data-service.js";
+import { Service } from "./service.js";
 
-export class YesButtonSerivce {
+
+export class YesButtonSerivce extends Service {
   currentIndext = 0;
   acceptButtons = [];
   #yesButton = null

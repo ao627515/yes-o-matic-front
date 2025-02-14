@@ -1,4 +1,7 @@
-export class LoadDefaultPreset {
+import { Service } from "./service.js";
+
+
+export class LoadDefaultPreset extends Service {
   constructor() {
     this._request = null;
   }
