@@ -1,5 +1,6 @@
 import { RequestMedia } from "./request-media.js";
 import { Service } from "./service.js";
+import { YesButtonService } from "./yes-button-service.js";
 
 
 export class NoButtonService extends Service {
@@ -24,6 +25,8 @@ export class NoButtonService extends Service {
         this.#noButton.textContent = rejectButton?.text;
         const requestMedia = RequestMedia.getInstance();
         requestMedia.changeMedia(rejectButton?.media);
+        const yesButton = YesButtonService.getInstance();
+        yesButton.refusalBehavior();
       }
     });
   }

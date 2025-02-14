@@ -10,8 +10,6 @@ export class RequestMedia extends Service {
 
   changeMedia(mediaName = 'default.jpg') {
     const appDataService = AppDataService.getInstance();
-    console.log('appDataService.requestMedia', appDataService.requestMedia);
-
     appDataService.requestMedia.src = this.#localPath + mediaName;
   }
 }
