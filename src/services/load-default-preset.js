@@ -16,21 +16,4 @@ export class LoadDefaultPreset extends Service {
 
     }
   }
-
-
-  defaultRequest() {
-    return new Request(
-      undefined,
-      'Oui',
-      'Va tu me faire un sandwich ?',
-      1,
-      false,
-      false,
-      false,
-      user,
-      null,
-      ['Non'],
-      null
-    );
-  }
 }

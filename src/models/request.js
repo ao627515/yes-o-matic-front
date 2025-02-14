@@ -8,8 +8,6 @@ export class Request {
     _acceptButtons = null,
     _text = null,
     _startMedia = null,
-    _numberOfRefusals = 1,
-    _numberOfAcceptances = 1,
     _forceAccept = false,
     _isAccepted = false,
     _isRejected = false,
@@ -22,8 +20,6 @@ export class Request {
     this._acceptButtons = _acceptButtons;
     this._text = _text;
     this._startMedia = _startMedia;
-    this._numberOfRefusals = _numberOfRefusals;
-    this._numberOfAcceptances = _numberOfAcceptances;
     this._forceAccept = _forceAccept;
     this._isAccepted = _isAccepted;
     this._isRejected = _isRejected;

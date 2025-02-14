@@ -16,8 +16,6 @@ export const DEFAULT_REQUEST = new Request(
   ],
   'Va tu me faire un sandwich ?',
   'start.gif',
-  4,
-  1,
   false,
   false,
   false,
