@@ -9,6 +9,7 @@ export class AppDataService extends Service {
   _requestText = null;
   _yesButton = null;
   _noButton = null;
+  _requestMedia = null;
 
   constructor(
   ) {
@@ -22,6 +23,7 @@ export class AppDataService extends Service {
     this._requestText = document.getElementById('request-text');
     this._yesButton = document.getElementById('yes-button');
     this._noButton = document.getElementById('no-button');
+    this._requestMedia = document.getElementById('reqiest-media');
   }
 
 
@@ -33,8 +35,9 @@ export class AppDataService extends Service {
   get requestText() { return this._requestText; }
   get yesButton() { return this._yesButton; }
   get noButton() { return this._noButton }
+  get requestMedia() { return this._requestMedia; }
 
-  set bgContainer(value) { AppDataService._bgContainer = value; }
+  set bgContainer(value) { this._bgContainer = value; }
   set requestContainer(value) { this._requestContainer = value; }
   set mediaContainer(value) { this._mediaContainer = value; }
   set requestTextContainer(value) { this._requestTextContainer = value; }
@@ -42,4 +45,5 @@ export class AppDataService extends Service {
   set requestText(value) { this._requestText = value; }
   set yesButton(value) { this.yesButton = value; }
   set noButton(value) { this._noButton = value; }
+  set requestMedia(value) { this._requestMedia = value; }
 }

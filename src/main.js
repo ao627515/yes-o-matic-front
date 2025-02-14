@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // console.log(mediaContainer);
 
   const app = App.getInstance();
-  console.log(app);
+  // console.log(app);
 
   app.init();
   app.run();
