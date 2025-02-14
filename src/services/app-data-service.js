@@ -9,14 +9,6 @@ export class AppDataService {
   _noButton = null;
 
   constructor(
-    // _bgContainer,
-    // _requestContainer,
-    // _mediaContainer,
-    // _requestTextContainer,
-    // _requestButtonContainer,
-    // _requestText,
-    // _yesButton,
-    // _noButton,
   ) {
     this._bgContainer = document.querySelector('.bg-container');
     this._requestContainer = document.querySelector('.request-container');
