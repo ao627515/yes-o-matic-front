@@ -2,6 +2,7 @@ import { Media } from './media.js';
 import { RejectionsButton } from './rejections-button.js';
 import { User } from './user.js';
 
+
 export class Request {
   constructor(
     _id = undefined,
@@ -15,6 +16,7 @@ export class Request {
     _rejectionsButtons = null,
     _bgStyles = null,
     _successMessage = null,
+    _successMedia = null
   ) {
     this._id = _id;
     this._acceptButtons = _acceptButtons;
@@ -27,6 +29,8 @@ export class Request {
     this._rejectionsButtons = _rejectionsButtons;
     this._bgStyles = _bgStyles;
     this._successMessage = _successMessage ?? _text;
+    this._successMedia = _successMedia;
+
   }
 
   // Getters
@@ -40,6 +44,7 @@ export class Request {
   get rejectionsButtons() { return this._rejectionsButtons; }
   get bgStyles() { return this._bgStyles; }
   get successMessage() { return this._successMessage; }
+  get successMedia() { return this._successMedia; }
 
   // Setters
   set id(value) { this._id = value; }
@@ -52,4 +57,5 @@ export class Request {
   set rejectionsButtons(value) { this._rejectionsButtons = value; }
   set bgStyles(value) { this._bgStyles = value; }
   set successMessage(value) { this._successMessage = value; }
+  set successMedia(value) { this._successMedia = value; }
 }

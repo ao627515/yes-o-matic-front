@@ -1,6 +1,8 @@
 import { AppDataService } from "./app-data-service.js";
 import { Service } from "./service.js";
 import { NoButtonService } from "./no-button-service.js";
+import { RequestService } from "./request-service.js";
+import { RequestMedia } from "./request-media.js";
 
 
 export class YesButtonService extends Service {
@@ -16,7 +18,12 @@ export class YesButtonService extends Service {
   }
 
   handle() {
-    this.#yesButton.addEventListener('click', this.onclickYesButton);
+    this.#yesButton.addEventListener('click', () => {
+      const appDataService = AppDataService.getInstance();
+      appDataService.requestButtonContainer.style.display = 'none';
+      appDataService.requestText.textContent = RequestService.getGlobalRequest().successMessage;
+      RequestMedia.getInstance().changeMedia(RequestService.getGlobalRequest().successMedia);
+    });
   }
 
   getYesButton() {
@@ -29,6 +36,12 @@ export class YesButtonService extends Service {
 
   setAcceptButtons(value) {
     this.acceptButtons = value;
+  }
+
+  acceptBehavior() {
+    const appDataService = AppDataService.getInstance();
+    appDataService.requestButtonContainer.style.flexDirection = 'row';
+    appDataService.yesButton.style.padding = '0';
   }
 
   onclickYesButton() {

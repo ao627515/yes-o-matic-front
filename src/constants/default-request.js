@@ -47,6 +47,7 @@ export const DEFAULT_REQUEST = new Request(
     ),
   ],
   new BgStyle(),
-  'Merci pour le sandwich'
+  'Merci pour le sandwich',
+  'acceptance_1.gif'
 );
 
