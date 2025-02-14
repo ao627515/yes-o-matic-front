@@ -15,7 +15,8 @@ export class Request {
     _isRejected = false,
     _user = null,
     _rejectionsButtons = null,
-    _bgStyles = null
+    _bgStyles = null,
+    _successMessage = null,
   ) {
     this._id = _id;
     this._acceptButtons = _acceptButtons;
@@ -29,6 +30,7 @@ export class Request {
     this._user = _user;
     this._rejectionsButtons = _rejectionsButtons;
     this._bgStyles = _bgStyles;
+    this._successMessage = _successMessage ?? _text;
   }
 
   // Getters
@@ -41,6 +43,7 @@ export class Request {
   get user() { return this._user; }
   get rejectionsButtons() { return this._rejectionsButtons; }
   get bgStyles() { return this._bgStyles; }
+  get successMessage() { return this._successMessage; }
 
   // Setters
   set id(value) { this._id = value; }
@@ -52,4 +55,5 @@ export class Request {
   set user(value) { this._user = value; }
   set rejectionsButtons(value) { this._rejectionsButtons = value; }
   set bgStyles(value) { this._bgStyles = value; }
+  set successMessage(value) { this._successMessage = value; }
 }

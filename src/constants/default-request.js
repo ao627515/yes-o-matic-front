@@ -48,6 +48,7 @@ export const DEFAULT_REQUEST = new Request(
       null
     ),
   ],
-  new BgStyle()
+  new BgStyle(),
+  'Merci pour le sandwich'
 );
 
