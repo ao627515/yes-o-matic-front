@@ -1,3 +1,4 @@
+import { RequestMedia } from "./request-media.js";
 import { Service } from "./service.js";
 
 
@@ -19,7 +20,10 @@ export class NoButtonService extends Service {
       if (this.currentIndex < (this.rejectButtons.length - 1)) {
         this.#currentIndex++;
         console.log('Le bouton "Non" a été cliqué.');
-        this.#noButton.textContent = this.rejectButtons[this.#currentIndex]?.text;
+        const rejectButton = this.rejectButtons[this.#currentIndex];
+        this.#noButton.textContent = rejectButton?.text;
+        const requestMedia = RequestMedia.getInstance();
+        requestMedia.changeMedia(rejectButton?.media);
       }
     });
   }

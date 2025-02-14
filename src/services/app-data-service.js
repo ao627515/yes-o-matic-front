@@ -23,7 +23,7 @@ export class AppDataService extends Service {
     this._requestText = document.getElementById('request-text');
     this._yesButton = document.getElementById('yes-button');
     this._noButton = document.getElementById('no-button');
-    this._requestMedia = document.getElementById('reqiest-media');
+    this._requestMedia = document.getElementById('request-media');
   }
 
 
