@@ -22,7 +22,7 @@ export class App extends Service {
 
   init() {
     this._appDataService = AppDataService.getInstance();
-    // console.log(this._appDataService);
     AuthService.user = new User();
+
   }
 }
